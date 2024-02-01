@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
+import sys
 
 # don't forget to chmod chmod a+x myfile.py
-with open('fileprocessor.input', 'r') as file:
-	lines = file.readlines()
+# to run me ./fileprocessor2.py < fileprocessor.input
+
+#with open('fileprocessor.input', 'r') as file:
+#    lines = file.readlines()
 
 
 user_data = []
 skipped_items = []
 
-for line in lines:
+for line in sys.stdin:
 	# skip
 	if line.startswith('#'):
 		skipped_items.append(line.strip())
